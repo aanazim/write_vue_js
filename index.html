@@ -11,15 +11,23 @@
     <div id="app">
         <input type="text" v-model="name">
         <h2>{{ message }} {{ name }}</h2>
+        <ul>
+            <li v-for="skill in skills">{{ skill }}</li>
+        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@2.5.22/dist/vue.js"></script>
     <script>
+        var skills = ['html', 'css', 'js', 'php'];
         var app = new Vue({
             el: '#app',
             data: {
                 message: 'How are you?',
                 name: 'Plabon',
+                skills,
+            },
+            mounted: function(){
+                console.log('ok');
             }
         });
     </script>
